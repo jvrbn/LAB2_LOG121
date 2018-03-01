@@ -1,4 +1,4 @@
-public class Joueur {
+public class Joueur implements Comparable{
 
     String joueur = null;
     String joueur2 = null;
