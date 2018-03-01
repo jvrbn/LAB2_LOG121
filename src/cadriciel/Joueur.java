@@ -1,3 +1,5 @@
+package cadriciel;
+
 public class Joueur implements Comparable{
 
     String joueur = null;

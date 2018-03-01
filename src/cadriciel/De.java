@@ -1,3 +1,5 @@
+package cadriciel;
+
 public class De {
     private int nbrFaces ;
 
