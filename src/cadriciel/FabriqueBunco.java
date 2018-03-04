@@ -1,4 +1,4 @@
-package bunco;
+package cadriciel;
 
 public class FabriqueBunco {
 }
