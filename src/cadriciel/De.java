@@ -1,5 +1,8 @@
 package cadriciel;
 
+/**
+ * Représente un dé dans un jeu de dés. Permet d'être brassé pour obtenir un chiffre aléatoir entre 1 et X.
+ */
 public class De {
     private int nbrFaces ;
 

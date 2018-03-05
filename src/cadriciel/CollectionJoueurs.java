@@ -3,7 +3,7 @@ package cadriciel;
 import java.util.Iterator;
 
 /**
- * Représente une collection de joueurs
+ * Représente une collection de joueurs.
  */
 public class CollectionJoueurs implements Iterable<Joueur> {
 
@@ -46,7 +46,7 @@ public class CollectionJoueurs implements Iterable<Joueur> {
     public Iterator<Joueur> iterator() {
         return new Iterator<Joueur>() {
 
-            int currentIndex = 0;
+            private int currentIndex = 0;
 
             @Override
             public boolean hasNext() {
