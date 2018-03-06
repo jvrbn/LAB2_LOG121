@@ -3,6 +3,7 @@ package test;
 import cadriciel.De;
 import junit.framework.TestCase;
 import org.junit.*;
+import junit.framework.TestCase;
 
 public class DeTest extends TestCase {
 
