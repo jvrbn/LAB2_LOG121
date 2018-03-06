@@ -3,7 +3,7 @@ package cadriciel;
 /**
  * Représente un dé dans un jeu de dés. Permet d'être brassé pour obtenir un chiffre aléatoir entre 1 et X.
  */
-public class De {
+public class De implements Comparable<De>{
     private int nbrFaces ;
 
     public De(int nbFaces) {
@@ -12,6 +12,10 @@ public class De {
             throw new IllegalArgumentException("Le nombre de faces d'un dé doit être supérieur ou égale à 1.");
 
         nbrFaces = nbFaces;
+    }
+
+    public void setNbrFaces(int nbrFaces) {
+        this.nbrFaces = nbrFaces;
     }
 
     public int getNbFaces(){
@@ -24,5 +28,10 @@ public class De {
      */
     public int brasser() {
         return  (int)(Math.random() * nbrFaces + 1);
+    }
+
+    @Override
+    public int compareTo(De autreDe) {
+        return nbrFaces;
     }
 }
