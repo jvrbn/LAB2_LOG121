@@ -1,19 +1,28 @@
 package cadriciel;
-import java.util.Random;
 
+/**
+ * Représente un dé dans un jeu de dés. Permet d'être brassé pour obtenir un chiffre aléatoir entre 1 et X.
+ */
 public class De {
     private int nbrFaces ;
-    private static final int MAX = 6;
-    private static final int MIN = 1;
 
+    public De(int nbFaces) {
+        //Le nombre de face d'un dé ne peut pas être négatif ou zéro.
+        if(nbFaces < 1)
+            throw new IllegalArgumentException("Le nombre de faces d'un dé doit être supérieur ou égale à 1.");
 
+        nbrFaces = nbFaces;
+    }
 
+    public int getNbFaces(){
+        return nbrFaces;
+    }
+
+    /**
+     * Génere un chiffre aléatoire entre 1 et le nombre de faces du dé.
+     * @return Un chiffre aléatoire.
+     */
     public int brasser() {
-
-        Random ran = new Random();
-        return ran.nextInt(MAX-MIN+1)+MIN;
-
-
+        return  (int)(Math.random() * nbrFaces + 1);
     }
 }
-
