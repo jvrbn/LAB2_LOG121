@@ -1,7 +1,6 @@
 package test;
 
 import cadriciel.De;
-//import junit.framework.TestCase;
 import org.junit.*;
 import static org.junit.Assert.*;
 
