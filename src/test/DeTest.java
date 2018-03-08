@@ -19,9 +19,9 @@ public class DeTest {
     @Test
     public void deInferieurTest(){
 
-        de1.setNbrFaces(3);
-        assertTrue(1==1);
-        //assertTrue(de1.compareTo(de2) == 3);
+        de1.setNbrFaces(7);
+        //assertTrue(1==1);
+        assertTrue(de1.compareTo(de2) == 1);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class DeTest {
     public void getterDeTest(){
 
         De de = new De(1);
-        assertTrue(de1.getNbFaces() == 1);
+        assertTrue(de.getNbFaces() == 1);
     }
 
     //Test du setter du nombre de face
@@ -52,11 +52,15 @@ public class DeTest {
 
         De de = new De(1);
         de.setNbrFaces(3);
-        assertTrue(de2.getNbFaces() == 3);
+        assertTrue(de.getNbFaces() == 3);
     }
     @Test
     public void brasserDeTest(){
 
-        assertTrue(de1.brasser() <= de1.getNbFaces() && de1.brasser() > 0);
+        for(int i = 0 ;i<100000;i++) {
+
+            int random = de1.brasser();
+            assertTrue(random <= de1.getNbFaces() && random > 0);
+        }
     }
 }
