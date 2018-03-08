@@ -50,7 +50,7 @@ public class CollectionDes implements Iterable<De> {
 
             @Override
             public boolean hasNext() {
-                if(currentIndex < nbDes)
+                if(currentIndex < nbDes - 1)
                     return true;
                 return false;
             }

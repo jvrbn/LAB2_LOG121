@@ -50,7 +50,7 @@ public class CollectionJoueurs implements Iterable<Joueur> {
 
             @Override
             public boolean hasNext() {
-                if(currentIndex < nbJoueurs)
+                if(currentIndex < nbJoueurs - 1)
                     return true;
                 return false;
             }
