@@ -23,6 +23,9 @@ public class RegleBunco implements IStrategieRegles {
      * @return Si oui ou non il faut passer la main au prochain joueur.
      */
     public boolean calculerScoreTour(Jeu jeu){
+
+
+
         return true; //TODO
     }
 }

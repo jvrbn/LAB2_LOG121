@@ -5,6 +5,7 @@ package cadriciel;
  */
 public class De implements Comparable<De>{
     private int nbrFaces ;
+    private int faceObtenue ;
 
     public De(int nbFaces) {
         //Le nombre de face d'un dé ne peut pas être négatif ou zéro.
@@ -20,6 +21,14 @@ public class De implements Comparable<De>{
 
     public int getNbFaces(){
         return nbrFaces;
+    }
+
+    public int getFaceObtenue() {
+        return faceObtenue;
+    }
+
+    public void setFaceObtenue(int faceObtenue) {
+        this.faceObtenue = faceObtenue;
     }
 
     /**
