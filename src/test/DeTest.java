@@ -15,9 +15,9 @@ public class DeTest {
     @Before
     public void creationDe(){
 
-        de1 = new De(6);
-        de2 = new De(6);
-        de3 = new DeMock(6);
+        de1 = new De(3);
+        de2 = new De(3);
+        de3 = new DeMock(2);
     }
 
     @Test
@@ -92,9 +92,13 @@ public class DeTest {
     public void deIdentiques(){
 
         //On brasse les dés et on obtient la même valeur
-        int identique1 = de3.brasser();
-        int identique2 = de3.brasser();
-        int identique3 = de3.brasser();
-        // assertTrue(identique1 == identique2 && identique1 == identique3);
+        for(int i = 0 ;i < 1000000003 ; i++) {
+
+            int identique1 = de3.brasser();
+            int identique2 = de3.brasser();
+            assertTrue(identique1 == identique2);
+
+        }
+
     }
 }
