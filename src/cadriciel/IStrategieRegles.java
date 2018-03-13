@@ -4,5 +4,5 @@ public interface IStrategieRegles{
 
     Joueur[] calculerVainqueur(Jeu jeu);
 
-    boolean calculerScoreTour(Jeu jeu);
+    int calculerScoreTour(Jeu jeu);
 }

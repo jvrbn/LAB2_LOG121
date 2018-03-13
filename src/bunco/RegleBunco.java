@@ -29,17 +29,42 @@ public class RegleBunco implements IStrategieRegles {
     }
 
     /**
-     * Calcule le score d'un tour pour un joueur.
+     * Calcule le score d'un LANCER pour un joueur.
      * @param jeu Le jeu de dé
      * @return Si oui ou non il faut passer la main au prochain joueur.
      */
-    public boolean calculerScoreTour(Jeu jeu){
+    public int calculerScoreTour(Jeu jeu){
 
-        int[] resultats = jeu.brasserDes();
+        int tour = jeu.getNbTours();
+        int de1 = jeu.brasserDes()[0];
+        int de2 = jeu.brasserDes()[1];
+        int de3 = jeu.brasserDes()[3];
+        int score = 0;
 
+        if(de1 == de2 && de1 == de3 && de1 == tour){
 
+            return 21;
+        }
+        if(de1 == de2 && de1 == de3 && de1 != tour){
 
+            return 5;
+        }
+        else {
 
-        return true; //TODO
+            if(de1 == tour){
+
+                score += 1;
+            }
+            if(de2 == tour){
+
+                score += 1;
+            }
+            if(de3 == tour){
+
+                score += 1;
+            }
+
+            return score;
+        }
     }
 }
