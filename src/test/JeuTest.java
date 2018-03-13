@@ -1,5 +1,6 @@
 package test;
 
+import bunco.RegleBunco;
 import cadriciel.*;
 import org.junit.*;
 
@@ -14,9 +15,9 @@ public class JeuTest{
     public void creationJeu(){
         CollectionDes de = new CollectionDes();
         CollectionJoueurs joueur = new CollectionJoueurs();
+        RegleBunco regle = new RegleBunco();
 
-
-        //jeu = new Jeu(de,joueur,1);
+        jeu = new Jeu(de,joueur,regle);
     }
 
     //Test du getter du nombre de face
