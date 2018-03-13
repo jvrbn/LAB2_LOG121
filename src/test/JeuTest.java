@@ -16,7 +16,7 @@ public class JeuTest{
         CollectionJoueurs joueur = new CollectionJoueurs();
 
 
-        jeu = new Jeu(de,joueur,1);
+        //jeu = new Jeu(de,joueur,1);
     }
 
     //Test du getter du nombre de face

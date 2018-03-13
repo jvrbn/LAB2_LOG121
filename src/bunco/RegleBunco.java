@@ -35,6 +35,9 @@ public class RegleBunco implements IStrategieRegles {
      */
     public boolean calculerScoreTour(Jeu jeu){
 
+        int[] resultats = jeu.brasserDes();
+
+
 
 
         return true; //TODO
