@@ -1,5 +1,6 @@
 package cadriciel;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -40,6 +41,24 @@ public class CollectionJoueurs implements Iterable<Joueur> {
     }
 
     /**
+     * Trie et renvoie une copie de notre collection de joueurs.
+     * @return Une copie trier de notre tableau de joueurs.
+     */
+    public Joueur[] trier(){
+
+        // On ne veut pas changer l'ordre de notre vrai tableau.
+        Joueur[] copie = new Joueur[nbJoueurs];
+
+        System.arraycopy(joueurs,0,copie,0,nbJoueurs);
+
+        Arrays.sort(copie);
+
+
+
+        return copie;
+    }
+
+    /**
      * Retourne un itérateur permetant de parcourir notre collection de joueurs.
      * @return Un itérateur de joueurs.
      */
@@ -62,8 +81,4 @@ public class CollectionJoueurs implements Iterable<Joueur> {
             }
         };
     }
-
-
-
-
 }

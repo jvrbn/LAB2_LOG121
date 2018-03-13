@@ -34,7 +34,6 @@ public class FabriqueBunco extends FabriqueJeu {
 
         CollectionJoueurs joueurs = new CollectionJoueurs();
 
-        // Nous avons 4 joueurs.
         for(int i = 0; i < nbJoueurs; ++i){
             joueurs.ajouterJoueur(new Joueur());
         }

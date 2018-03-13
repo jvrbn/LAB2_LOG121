@@ -1,11 +1,13 @@
 package cadriciel;
 
+import java.util.Iterator;
+
 public class Jeu {
 
     private int nbTours = 1;
     private CollectionDes des;
     private CollectionJoueurs joueurs;
-    IStrategieRegles regles;
+    private IStrategieRegles regles;
 
     public Jeu(CollectionDes des, CollectionJoueurs joueurs, IStrategieRegles regles) {
 
@@ -13,6 +15,27 @@ public class Jeu {
         this.joueurs=joueurs;
         this.regles=regles;
     }
+
+    public int[] brasserDes() {
+        return des.brasserDes();
+    }
+
+    /**
+     * Retourne un itérateur permettant de parcourire tous les jouers.
+     * @return Itérateur de joueurs.
+     */
+    public Iterator<Joueur> getIteratorJoueur(){
+        return joueurs.iterator();
+    }
+
+    /**
+     * Retourne un itérateur permettant de parcourire tous les dés.
+     * @return Itérateur de dés.
+     */
+    public Iterator<De> getIteratorDe(){
+        return des.iterator();
+    }
+
 
     public int getNbTours() {
         return nbTours;

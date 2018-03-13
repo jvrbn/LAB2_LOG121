@@ -40,6 +40,23 @@ public class CollectionDes implements Iterable<De> {
     }
 
     /**
+     * Brasse tous les dés et renvoie leur résultat.
+     * @return Le résultat de toutes les générations aléatoires.
+     */
+    public int[] brasserDes() {
+        int[] resultats = new int[nbDes];
+
+        int i = 0;
+
+        for(De de : this){
+            resultats[i] = de.brasser();
+            i++;
+        }
+
+        return resultats;
+    }
+
+    /**
      * Créer un itérateur permetant de parcourir la collection.
      * @return Un itérateur permetant de parcourir la collection de dés.
      */
