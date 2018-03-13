@@ -3,7 +3,6 @@ package test;
 import cadriciel.De;
 import org.junit.*;
 
-import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
