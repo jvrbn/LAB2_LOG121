@@ -36,11 +36,13 @@ public class De implements Comparable<De>{
      * @return Un chiffre aléatoire.
      */
     public int brasser() {
-        return  (int)(Math.random() * nbrFaces + 1);
+
+        this.faceObtenue = (int)(Math.random() * nbrFaces + 1);
+        return this.faceObtenue ;
     }
 
     @Override
     public int compareTo(De autreDe) {
-        return nbrFaces - autreDe.nbrFaces;
+        return faceObtenue - autreDe.faceObtenue;
     }
 }
