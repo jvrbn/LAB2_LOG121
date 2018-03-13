@@ -38,7 +38,7 @@ public class RegleBunco implements IStrategieRegles {
         int tour = jeu.getNbTours();
         int de1 = jeu.brasserDes()[0];
         int de2 = jeu.brasserDes()[1];
-        int de3 = jeu.brasserDes()[3];
+        int de3 = jeu.brasserDes()[2];
         int score = 0;
 
         if(de1 == de2 && de1 == de3 && de1 == tour){
