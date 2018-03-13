@@ -1,10 +1,11 @@
+/*
 package bunco;
 
 import cadriciel.*;
 
 /**
  * Implémentation d'une fabrique de jeu permettant de faire une partie de Bunco+.
- */
+ *
 public class FabriqueBunco extends FabriqueJeu {
 
     private int nbJoueurs = 0;
@@ -46,3 +47,4 @@ public class FabriqueBunco extends FabriqueJeu {
         return new RegleBunco();
     }
 }
+*/

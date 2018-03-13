@@ -9,13 +9,26 @@ public class Jeu {
     private CollectionJoueurs joueurs;
     private IStrategieRegles regles;
 
+
     public Jeu(CollectionDes des, CollectionJoueurs joueurs, IStrategieRegles regles) {
 
-        this.des=des;
-        this.joueurs=joueurs;
-        this.regles=regles;
+        this.des = des;
+        this.joueurs = joueurs;
+        this.regles = regles;
     }
 
+    public int calculerScoreTour(){
+        return regles.calculerScoreTour(this);
+    }
+
+    public Joueur[] calculerVainqueur(){
+        return regles.calculerVainqueur(this);
+    }
+
+    /**
+     * Brasse tout les dés du jeu et retourne leur résultats.
+     * @return Tableau contenant les résultats des dés.
+     */
     public int[] brasserDes() {
         return des.brasserDes();
     }
