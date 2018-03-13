@@ -43,6 +43,6 @@ public class De implements Comparable<De>{
 
     @Override
     public int compareTo(De autreDe) {
-        return faceObtenue - autreDe.faceObtenue;
+        return nbrFaces - autreDe.nbrFaces;
     }
 }
