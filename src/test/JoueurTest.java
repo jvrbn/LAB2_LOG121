@@ -2,8 +2,6 @@ package test;
 
 import cadriciel.Joueur;
 import org.junit.*;
-
-import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class JoueurTest{
