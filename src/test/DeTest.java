@@ -11,12 +11,14 @@ public class DeTest {
 
     private De de1;
     private De de2;
+    private DeMock de3;
 
     @Before
     public void creationDe(){
 
         de1 = new De(6);
         de2 = new De(6);
+        de3 = new DeMock(6);
     }
 
     @Test
@@ -85,5 +87,15 @@ public class DeTest {
             int random = de1.brasser();
             assertTrue(random <= de1.getNbFaces() && random > 0);
         }
+    }
+
+    @Test
+    public void deIdentiques(){
+
+        //On brasse les dés et on obtient la même valeur
+        int identique1 = de3.brasser();
+        int identique2 = de3.brasser();
+        int identique3 = de3.brasser();
+        // assertTrue(identique1 == identique2 && identique1 == identique3);
     }
 }
