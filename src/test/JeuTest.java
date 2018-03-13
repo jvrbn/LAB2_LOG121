@@ -1,7 +1,6 @@
 package test;
 
-import cadriciel.Jeu;
-import cadriciel.Joueur;
+import cadriciel.*;
 import org.junit.*;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -13,7 +12,11 @@ public class JeuTest{
 
     @Before
     public void creationJeu(){
-        jeu = new Jeu();
+        CollectionDes de = new CollectionDes();
+        CollectionJoueurs joueur = new CollectionJoueurs();
+
+
+        jeu = new Jeu(de,joueur,1);
     }
 
     //Test du getter du nombre de face

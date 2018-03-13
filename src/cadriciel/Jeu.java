@@ -45,4 +45,8 @@ public class Jeu {
         this.nbTours = nbTours;
     }
 
+    public Joueur[] trieJoueurs(){
+        return joueurs.trier();
+    }
+
 }

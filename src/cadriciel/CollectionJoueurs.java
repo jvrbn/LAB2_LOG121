@@ -6,13 +6,21 @@ import java.util.Iterator;
 /**
  * Représente une collection de joueurs.
  */
-public class CollectionJoueurs implements Iterable<Joueur> {
+public class CollectionJoueurs implements Iterable<Joueur>{
 
     private Joueur[] joueurs;
     private int nbJoueurs = 0;
 
     public CollectionJoueurs() {
         joueurs = new Joueur[10];
+    }
+
+    public Joueur[] getJoueurs() {
+        return joueurs;
+    }
+
+    public void setJoueurs(Joueur[] joueurs) {
+        this.joueurs = joueurs;
     }
 
     public int getNbJoueur(){

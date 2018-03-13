@@ -73,7 +73,6 @@ public class DeTest {
         catch (Exception e){
             assertThat(e.getMessage(), is("Le nombre de faces d'un dé doit être supérieur ou égale à 1."));
         }
-        //de1.compareTo(null);
     }
 
     @Test
