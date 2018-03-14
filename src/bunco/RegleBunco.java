@@ -36,30 +36,28 @@ public class RegleBunco implements IStrategieRegles {
     public int calculerScoreTour(Jeu jeu){
 
         int tour = jeu.getNbTours();
-        int de1 = jeu.brasserDes()[0];
-        int de2 = jeu.brasserDes()[1];
-        int de3 = jeu.brasserDes()[2];
+        int[] de = jeu.brasserDes();
         int score = 0;
 
-        if(de1 == de2 && de1 == de3 && de1 == tour){
+        if(de[0] == de[1] && de[0] == de[2] && de[0] == tour){
 
             return 21;
         }
-        if(de1 == de2 && de1 == de3 && de1 != tour){
+        if(de[0] == de[1] && de[0] == de[2] && de[0] != tour){
 
             return 5;
         }
         else {
 
-            if(de1 == tour){
+            if(de[0] == tour){
 
                 score += 1;
             }
-            if(de2 == tour){
+            if(de[1] == tour){
 
                 score += 1;
             }
-            if(de3 == tour){
+            if(de[2] == tour){
 
                 score += 1;
             }

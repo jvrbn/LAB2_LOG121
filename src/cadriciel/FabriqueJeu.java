@@ -5,9 +5,9 @@ package cadriciel;
  */
 public class FabriqueJeu {
 
-    private int nbJoueurs = 0;
-    private int nbDes = 0;
-    private int nbFaces = 0;
+    protected int nbJoueurs = 0;
+    protected int nbDes = 0;
+    protected int nbFaces = 0;
 
     public Jeu fabriquerJeu(int nbJoueurs, int nbDes, int nbFaces, IStrategieRegles regles){
 
