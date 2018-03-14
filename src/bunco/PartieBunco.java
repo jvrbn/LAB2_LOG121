@@ -9,49 +9,51 @@ import java.util.Iterator;
  */
 public class PartieBunco implements IPartie {
 
+    Joueur joueurActuel;
+    Iterator<Joueur> iteratorJoueur;
+
+    Jeu jeu;
+
+    public  PartieBunco(){
+        jeu = (new FabriqueJeu().fabriquerJeu(4,3,6,new RegleBunco()));
+        iteratorJoueur = jeu.getIteratorJoueur();
+        changerJoueur();
+    }
+
+
     /**
-     * Permet de joueur une partie complète de Bunco+
+     * Permet de jouer un tour pour le joueur actuel.
+     * @return Si il doit passer la main ou non.
      */
-    public void jouer(){
+    public boolean jouerTour(){
 
-        // Nous créons notre jeu de bunco+ 4 joueurs, 3 dés à 6 faces.
-        Jeu jeu = (new FabriqueJeu().fabriquerJeu(4,3,6,new RegleBunco()));
+        int score = jeu.calculerScoreTour();
 
-        Iterator<Joueur> joueurs = jeu.getIteratorJoueur();
+        joueurActuel.setScore(joueurActuel.getScore() + score);
 
-        // Pendant 6 tours
-        for(int i = 0; i < 6; ++i) {
-
-            // On assigne le tour actuel au jeu.
-            jeu.setNbTours(i + 1);
-
-            // Pour chaque joueur
-            while (joueurs.hasNext()) {
-
-                Joueur joueur = joueurs.next();
-
-                int score;
-
-                // Tant que notre joueur ne gagne pas un bunco ou ne gagne aucun point.
-                do {
-                    score = jeu.calculerScoreTour();
-
-                    joueur.setScore(joueur.getScore() + score);
-                } while(score != 21 && score != 0 );
-            }
-        }
+        return score == 21 || score == 0;
     }
 
-    public boolean changerJoueur(int score){
+    /**
+     * Passe au prochain joueur.
+     * @return Faux si c'est le dernier joueur.
+     */
+    public boolean changerJoueur(){
 
-        if(score == 0 || score == 21){
-
-            return true;
-        }
-        else{
-
+        if(!iteratorJoueur.hasNext())
             return false;
-        }
+
+        joueurActuel = iteratorJoueur.next();
+        return iteratorJoueur.hasNext();
     }
 
+    /**
+     * Change le tour de jeu.
+     * @return Vrai si c'est le dernier tour de jeu.
+     */
+    public boolean changerTour(){
+        jeu.setNbTours(jeu.getNbTours() + 1);
+
+        return jeu.partieTerminer();
+    }
 }

@@ -70,12 +70,11 @@ public class RegleBunco implements IStrategieRegles {
 
     public boolean partieTerminer(Jeu jeu){
 
-        while(jeu.getNbTours() != NOMBRE_TOUR_MAX){
+        if(jeu.getNbTours() != NOMBRE_TOUR_MAX){
 
             return false;
         }
 
         return true;
-
     }
 }

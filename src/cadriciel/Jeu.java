@@ -25,6 +25,10 @@ public class Jeu {
         return regles.calculerVainqueur(this);
     }
 
+    public boolean partieTerminer(){
+        return regles.partieTerminer(this);
+    }
+
     /**
      * Brasse tout les dés du jeu et retourne leur résultats.
      * @return Tableau contenant les résultats des dés.
