@@ -41,4 +41,16 @@ public class PartieBunco implements IPartie {
             }
         }
     }
+
+    public boolean changerJoueur(Jeu jeu){
+
+        if(jeu.calculerScoreTour() == 0 || jeu.calculerScoreTour() == 21){
+
+            return true;
+        }
+        else{
+
+            return false;
+        }
+    }
 }

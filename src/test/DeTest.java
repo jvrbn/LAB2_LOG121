@@ -15,8 +15,8 @@ public class DeTest {
     @Before
     public void creationDe(){
 
-        de1 = new De(3);
-        de2 = new De(3);
+        de1 = new De(6);
+        de2 = new De(6);
         de3 = new DeMock(2);
     }
 
