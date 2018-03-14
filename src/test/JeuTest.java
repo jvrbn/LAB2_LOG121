@@ -8,14 +8,42 @@ import static org.junit.Assert.*;
 public class JeuTest{
 
     private Jeu jeu;
+    private CollectionJoueurs joueurs;
+    private CollectionDes des;
+    private int nbFaces = 6;
 
     @Before
     public void creationJeu(){
-        CollectionDes de = new CollectionDes();
-        CollectionJoueurs joueur = new CollectionJoueurs();
+
+        des = new CollectionDes();
+        joueurs = new CollectionJoueurs();
         RegleBunco regle = new RegleBunco();
 
-        jeu = new Jeu(de,joueur,regle);
+        //Ajout des dés dans la collection de dés
+        des = new CollectionDes();
+        des.ajouterDe(new De(nbFaces));
+        des.ajouterDe(new De(nbFaces));
+        des.ajouterDe(new De(nbFaces));
+
+        //Création des joueurs
+        Joueur joueur1 = new Joueur();
+        Joueur joueur2 = new Joueur();
+        Joueur joueur3 = new Joueur();
+        Joueur joueur4 = new Joueur();
+
+        //ajout des joueurs dans la collection de joueurs
+        joueurs.ajouterJoueur(joueur1);
+        joueurs.ajouterJoueur(joueur2);
+        joueurs.ajouterJoueur(joueur3);
+        joueurs.ajouterJoueur(joueur4);
+
+        //Ajuste le score de chaque joueurs
+        joueur1.setScore(3);
+        joueur2.setScore(2);
+        joueur3.setScore(7);
+        joueur4.setScore(1);
+
+        jeu = new Jeu(des,joueurs,regle);
     }
 
     //Test du getter du nombre de face
@@ -38,13 +66,6 @@ public class JeuTest{
     @Test
     public void brasserDesTest(){
 
-        int nbFaces = 6;
-
-        CollectionDes des = new CollectionDes();
-        des.ajouterDe(new De(nbFaces));
-        des.ajouterDe(new De(nbFaces));
-        des.ajouterDe(new De(nbFaces));
-
         int[] deBrasser = des.brasserDes();
 
         //Parcourt le tableau de dé et s'assurer que le dé est brasser entre le nombre de faces et 0
@@ -56,22 +77,6 @@ public class JeuTest{
     //Test de la méthode de trie des joueurs en fonction de leurs score
     @Test
     public void trieJoueursTest(){
-
-        Joueur joueur1 = new Joueur();
-        Joueur joueur2 = new Joueur();
-        Joueur joueur3 = new Joueur();
-        Joueur joueur4 = new Joueur();
-
-        CollectionJoueurs joueurs = new CollectionJoueurs();
-        joueurs.ajouterJoueur(joueur1);
-        joueurs.ajouterJoueur(joueur2);
-        joueurs.ajouterJoueur(joueur3);
-        joueurs.ajouterJoueur(joueur4);
-
-        joueur1.setScore(3);
-        joueur2.setScore(2);
-        joueur3.setScore(7);
-        joueur4.setScore(1);
 
         Joueur[] joueur = joueurs.trier();
 
