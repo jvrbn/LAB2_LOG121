@@ -7,6 +7,8 @@ import cadriciel.*;
  */
 public class RegleBunco implements IStrategieRegles {
 
+    public final static int NOMBRE_TOUR_MAX = 6;
+
     private Joueur[] joueurs;
     /**
      * Organise les joueurs en ordre décroissant de score pour trouver le gagnant.
@@ -64,5 +66,16 @@ public class RegleBunco implements IStrategieRegles {
 
             return score;
         }
+    }
+
+    public boolean partieTerminer(Jeu jeu){
+
+        while(jeu.getNbTours() != NOMBRE_TOUR_MAX){
+
+            return false;
+        }
+
+        return true;
+
     }
 }

@@ -42,9 +42,9 @@ public class PartieBunco implements IPartie {
         }
     }
 
-    public boolean changerJoueur(Jeu jeu){
+    public boolean changerJoueur(int score){
 
-        if(jeu.calculerScoreTour() == 0 || jeu.calculerScoreTour() == 21){
+        if(score == 0 || score == 21){
 
             return true;
         }
@@ -53,4 +53,5 @@ public class PartieBunco implements IPartie {
             return false;
         }
     }
+
 }
