@@ -7,4 +7,5 @@ public interface IPartie {
     public boolean jouerTour();
     public boolean changerJoueur();
     public boolean changerTour();
+    public Joueur[] obtenirClassement();
 }

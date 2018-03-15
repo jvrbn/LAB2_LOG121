@@ -68,6 +68,11 @@ public class RegleBunco implements IStrategieRegles {
         }
     }
 
+    /**
+     * Determine si la partie est terminée.
+     * @param jeu Le jeu en cours utilisant les règle.
+     * @return Vrai si la partie est terminée.
+     */
     public boolean partieTerminer(Jeu jeu){
 
         if(jeu.getNbTours() != NOMBRE_TOUR_MAX){

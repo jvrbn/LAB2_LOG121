@@ -14,8 +14,8 @@ public class PartieBunco implements IPartie {
 
     Jeu jeu;
 
-    public  PartieBunco(){
-        jeu = (new FabriqueJeu().fabriquerJeu(4,3,6,new RegleBunco()));
+    public  PartieBunco(FabriqueJeu fabrique){
+        jeu = (fabrique.fabriquerJeu(4,3,6,new RegleBunco()));
         iteratorJoueur = jeu.getIteratorJoueur();
         changerJoueur();
     }
@@ -54,6 +54,18 @@ public class PartieBunco implements IPartie {
     public boolean changerTour(){
         jeu.setNbTours(jeu.getNbTours() + 1);
 
+        //On retourne au premier joueur.
+        iteratorJoueur = jeu.getIteratorJoueur();
+        changerJoueur();
+
         return jeu.partieTerminer();
+    }
+
+    /**
+     * Obtien le classement des joueurs.
+     * @return Les joueurs en ordre décroissement.
+     */
+    public Joueur[] obtenirClassement(){
+        return jeu.calculerVainqueur();
     }
 }

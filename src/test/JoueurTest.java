@@ -17,7 +17,7 @@ public class JoueurTest{
     }
 
     @Test
-    public void deInferieurTest(){
+    public void joueurInferieurTest(){
 
         joueur1.setScore(1);
         joueur2.setScore(2);
@@ -25,7 +25,7 @@ public class JoueurTest{
     }
 
     @Test
-    public void deSuperieurTest(){
+    public void joueurSuperieurTest(){
 
         joueur1.setScore(2);
         joueur2.setScore(1);
@@ -33,7 +33,7 @@ public class JoueurTest{
     }
 
     @Test
-    public void memeDeTest(){
+    public void memeJoueurTest(){
 
         joueur1.setScore(1);
         joueur2.setScore(1);

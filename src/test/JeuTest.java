@@ -3,6 +3,7 @@ package test;
 import bunco.RegleBunco;
 import cadriciel.*;
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class JeuTest{
